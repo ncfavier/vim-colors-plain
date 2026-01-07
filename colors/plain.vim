@@ -102,8 +102,8 @@ endfunction
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm,})
 call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
-call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
-call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
+call s:h("Comment",       {"fg": s:comment, "cterm": "italic", "gui": "italic"})
+call s:h("Function",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
 
 call s:h("Constant",      {"bg": s:bg, "fg": s:constant})
 hi! link Character        Constant
@@ -116,7 +116,7 @@ hi! link String           Constant
 hi! link Identifier       Normal
 
 "hi! link Statement        Normal
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": "bold"})
+call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": "bold", "gui": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -149,7 +149,7 @@ hi! link Conceal          NonText
 
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
-call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": "bold"})
+call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": "bold", "gui": "bold"})
 call s:h("Todo",          {"fg": s:actual_white, "bg": s:black, "gui": "bold", "cterm": "bold"})
 call s:h("SpecialKey",    {"fg": s:subtle_black})
 call s:h("NonText",       {"fg": s:bg_very_subtle})
@@ -182,10 +182,10 @@ if has("gui_running")
   call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
   call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
 else
-  call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
-  call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
-  call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
+  call s:h("SpellBad",    {"cterm": "underline", "gui": "underline", "fg": s:red})
+  call s:h("SpellCap",    {"cterm": "underline", "gui": "underline", "fg": s:light_green})
+  call s:h("SpellRare",   {"cterm": "underline", "gui": "underline", "fg": s:pink})
+  call s:h("SpellLocal",  {"cterm": "underline", "gui": "underline", "fg": s:dark_green})
 endif
 
 """ Help
